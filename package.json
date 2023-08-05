@@ -1,0 +1,28 @@
+{
+  "name": "mahadevfoodapp",
+  "version": "1.0.0",
+  "description": "My first food app",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel index.html",
+    "build" : "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/priyankas0907/FoodApp.git"
+  },
+  "author": "Priyanka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/priyankas0907/FoodApp/issues"
+  },
+  "homepage": "https://github.com/priyankas0907/FoodApp#readme",
+  "devDependencies": {
+    "parcel": "^2.9.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
