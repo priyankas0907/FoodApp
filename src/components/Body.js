@@ -5,6 +5,8 @@ import Shimmer from "./Shimmer";
 
 const Body = () => {
   [listOfRes, setListOfRes] = useState([]);
+  [filteredList, setFilteredList] = useState([]);
+  [searchText, setSearchText] = useState('');
 
   useEffect(() => {
     fetchData();
@@ -19,11 +21,20 @@ const Body = () => {
     // console.log(resList);
     console.log(jsondata.data.success.cards[1].gridWidget.gridElements.infoWithStyle.restaurants);
     setListOfRes(jsondata?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
+    setFilteredList(jsondata?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants)
    
   };
+
   return listOfRes.length === 0 ? <Shimmer/> : (
     <div className="body">
       <div className="filter">
+        <div className="search">
+          <input type="text" className="search-box" value={searchText} onChange={(e) => setSearchText(e.target.value)}/>
+          <button className="srchButton" onClick={() => {
+           const filteredList1= listOfRes.filter((res)=>res.info.name.toLowerCase().includes(searchText.toLowerCase()));
+           setFilteredList(filteredList1);
+          }}>Search</button>
+        </div>
         <button
           className="btn-filter"
           onClick={() => {
@@ -35,7 +46,7 @@ const Body = () => {
         </button>
       </div>
       <div className="res-container">
-        {listOfRes.map((resrtaurant) => (
+        {filteredList.map((resrtaurant) => (
           <RestaurantCard key={resrtaurant.info.id} resData={resrtaurant} />
         ))}
       </div>
