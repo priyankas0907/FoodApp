@@ -45,3 +45,15 @@
 .btn-filter{
     margin: 10px;
 }
+
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.shimmer-card{
+    height: 400px;
+    width: 200px;
+    background-color: #bfa7a7b5;
+    margin: 10px;
+}
