@@ -38,8 +38,8 @@ const Body = () => {
         <button
           className="btn-filter"
           onClick={() => {
-            listOfRes = listOfRes.filter((res) => res.info.avgRating > 4);
-            setListOfRes(listOfRes);
+            filteredList2 = listOfRes.filter((res) => res.info.avgRating > 4);
+            setFilteredList(filteredList2);
           }}
         >
           Top Rated Restaurants
