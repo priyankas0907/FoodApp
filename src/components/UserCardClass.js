@@ -12,6 +12,7 @@ class UserCardClass extends React.Component {
       userInfo: {
         login: "ps",
         location: "in",
+        avatar_url: "jhj"
       },
     };
   }
@@ -19,7 +20,7 @@ class UserCardClass extends React.Component {
   async componentDidMount() {
     const data = await fetch("https://api.github.com/users/priyankas0907");
     const json = await data.json();
-    console.log(json);
+    console.log("comp did mount");
     this.setState({
       userInfo: json,
     });
@@ -30,6 +31,8 @@ class UserCardClass extends React.Component {
     const { count, count2 ,userInfo} = this.state;
     return (
       <div className="user-card">
+        <h3>{userInfo.login}</h3>
+        <img src={userInfo.avatar_url}/>
         <h2>User Class Componentc- Prop: {this.props.name}</h2>
         <h1>{count}</h1>
         <h2>{count2}</h2>
@@ -39,6 +42,14 @@ class UserCardClass extends React.Component {
         </button>
       </div>
     );
+  }
+
+  componentDidUpdate(){
+    console.log("componentDidUpdate");
+  }
+
+  componentWillUnmount(){
+    console.log("componentWillUnmount");
   }
 }
 
