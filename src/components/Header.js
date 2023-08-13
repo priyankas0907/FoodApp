@@ -25,6 +25,7 @@ const Header = () => {
           <ul>
             <li>Online Status : {onlineStatus === true ? "✅" : "🔴"}</li>
             <Link to="/">Home</Link>
+            <Link to="/grocery"> Grocery </Link>
             <Link to="/about">About Us</Link>
             <Link to="/contact">Contact Us</Link>
             <Link to="/">Cart</Link>
