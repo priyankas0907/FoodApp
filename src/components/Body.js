@@ -1,5 +1,5 @@
 import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
-import { resList } from "../utils/mockdata";
+// import { resList } from "../utils/mockdata";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";

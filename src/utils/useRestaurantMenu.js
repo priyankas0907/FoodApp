@@ -4,7 +4,7 @@ import { RES_URL } from "../utils/constants";
 
 const useRestaurantMenu = (resId) => {
 
-  const [resInfo, setResInfo] = useState({});
+  const [resInfo, setResInfo] = useState(null);
 
   useEffect(() => {
     fetchData();
@@ -13,9 +13,7 @@ const useRestaurantMenu = (resId) => {
   const fetchData = async () => {
     const data = await fetch(RES_URL + resId);
     const json = await data.json();
-    console.log("hook data");
-    console.log(json);
-    setResInfo(json.data.cards[0].card.card.info);
+    setResInfo(json);
   };
 
   return resInfo;
