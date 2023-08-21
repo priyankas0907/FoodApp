@@ -1,10 +1,11 @@
 import { LOGO_URL } from "../utils/constants";
-import { useState } from "react";
+import { useState , useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
-
+const{loggedInUser} = useContext(UserContext);
   console.log("Header Rendered");
   [btnText,setBtnText]=useState('Login');
 
@@ -40,6 +41,7 @@ const Header = () => {
             <Link to="/">Cart</Link>
             </li>
             <button className="loginbtn" onClick={() => toggleButtontext() }>{btnText}</button>
+            <p className="font-bold">{" "+loggedInUser}</p>
           </ul>
         </div>
         
