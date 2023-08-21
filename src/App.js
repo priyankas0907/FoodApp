@@ -21,12 +21,12 @@ const AppLayout = () => {
     setUserInfo(data.name);
   }, []);
   return (
-    <UserContext.Provider value={{loggedInUser : userInfo}}>
-    <div className="app">
-      <Header />
-      <Outlet />
-      //footer
-    </div>
+    <UserContext.Provider value={{ loggedInUser: userInfo, setUserInfo }}>
+      <div className="app">
+        <Header />
+        <Outlet />
+        //footer
+      </div>
     </UserContext.Provider>
   );
 };
